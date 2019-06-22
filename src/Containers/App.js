@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.module.css';
-import Cockpit from '../Components/Cockpit/Cockpit';
+import Content from '../Components/Cockpit/Content';
 import classes from './App.module.css'
 
 const App = () =>
@@ -8,7 +8,7 @@ const App = () =>
     // Rendering the cockpit component
     return (
         <div className={classes.App}>
-            <Cockpit/>
+            <Content/>
         </div>
 
     );

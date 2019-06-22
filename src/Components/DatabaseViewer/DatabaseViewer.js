@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FILTERS_DICT, httpGet} from '../Cockpit/Cockpit';
+import {FILTERS_DICT, httpGet} from '../Cockpit/Content';
 import ReactTable from 'react-table';
 
 class Viewer extends Component

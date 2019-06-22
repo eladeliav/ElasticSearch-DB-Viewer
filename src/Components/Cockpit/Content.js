@@ -19,7 +19,7 @@ export const httpGet = (url, d = null) =>
     return xmlHttp.response;
 };
 
-class Cockpit extends Component
+class Content extends Component
 {
 
     /**
@@ -60,6 +60,11 @@ class Cockpit extends Component
             searchBox: event.target.value,
             searchButtonClicked: false
         });
+        // simulating re-search if query is empty
+        if(event.target.value === "")
+        {
+            this.setState({searchButtonClicked: true});
+        }
     };
 
     handleRadioChange = (value, event) =>
@@ -94,4 +99,4 @@ class Cockpit extends Component
 }
 
 
-export default Cockpit;
+export default Content;
