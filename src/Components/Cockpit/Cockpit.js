@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Navbar from "./Navbar";
 import Viewer from "../DatabaseViewer/DatabaseViewer";
 
-const ELASTIC_URL = "http://172.16.1.127:9200/ebay";
+const ELASTIC_URL = "http://46.117.243.199:9200/ebay";
 export const FILTERS_DICT = {1: "id", 2: "title", 3: "brand", 4: "epid"};
 
 /**
