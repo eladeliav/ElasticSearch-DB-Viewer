@@ -82,10 +82,10 @@ class Viewer extends Component
         {
             let current = docs[doc]['_source'];
             data.push({
-                num: current['id'], // product #
+                num: isNaN(current['id']) ? "": parseInt(current['id']), // product #
                 title: current['title'], // title of product
                 brand: current['brand'], // product brand
-                epid: current['epid'] // product epid (ebay product id)
+                epid: parseInt(current['epid']) // product epid (ebay product id)
             });
         }
 
