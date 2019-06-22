@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Form, FormControl, Nav, Navbar, ToggleButton, ButtonToolbar, ToggleButtonGroup} from 'react-bootstrap';
+import {Button, ButtonToolbar, Form, FormControl, Nav, Navbar, ToggleButton, ToggleButtonGroup} from 'react-bootstrap';
 
 /**
  * React component for the navbar
@@ -16,7 +16,8 @@ const nav = (props) =>
                 <Nav className="mr-auto">
                 </Nav>
                 <Form onSubmit={props.searchClicked} inline>
-                    <FormControl value={props.inputValue} onChange={props.searchChanged} type="text" placeholder="Search"
+                    <FormControl value={props.inputValue} onChange={props.searchChanged} type="text"
+                                 placeholder="Search"
                                  className="mr-sm-2"/>
                     <Button onClick={props.searchClicked} variant="outline-info">Search</Button>
                     <ButtonToolbar>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {httpGet, FILTERS_DICT} from '../Cockpit/Cockpit';
+import {FILTERS_DICT, httpGet} from '../Cockpit/Cockpit';
 import ReactTable from 'react-table';
 
 class Viewer extends Component
@@ -43,19 +43,18 @@ class Viewer extends Component
 
         if (this.props.query !== "") // add the query param if received a query
         {
-            if(filterValue > 1)
-                urlParams += "&q=" + FILTERS_DICT[filterValue] + ":" + this.props.query;
+            if (filterValue > 1)
+                urlParams += "&q=" + FILTERS_DICT[filterValue] + ":" + this.props.query; // searching a specific field of filter on
             else
-                urlParams += "&q=" + this.props.query;
+                urlParams += "&q=" + this.props.query; // searching in all fields
         }
-
 
         let url = index + urlParams; // final url var
         let maxHits = this.getMaxHits(url); // getting number of results
         url += "&size=" + maxHits; // setting url params to receive all data
         let d = null;
-        if(this.props.query.startsWith('!'))
-            d = `{"query":{"bool": {"must_not": {"term": {"name": ${this.props.query} }}}}}`; //adding 'not' search property if query starts with !
+        if (this.props.query.startsWith('!'))
+            d = `{"query":{"bool": {"must_not": {"term": {"name": ${this.props.query} }}}}}`; //adding 'must_not' search property if query starts with !
 
         if (maxHits !== 0) // if we received hits
         {
